@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Conversation</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Type Conversation</h1>
+
+    <script>
+      //Type Conversation = change the datatype of a value to another (strings, number, boolean)
+
+      //Example 1
+      let age = window.prompt("How old are you?");
+      age = Number(age);
+      age += 1;
+      console.log(age);
+
+      //Example 2
+      let x = "pizza";
+      let y = "pizza";
+      let z = "pizza";
+
+      x = Number(x);
+      y = String(y);
+      z = Boolean(z);
+
+      console.log(x, typeof x);
+      console.log(y, typeof y);
+      console.log(z, typeof z);
+    </script>
+  </body>
+</html>

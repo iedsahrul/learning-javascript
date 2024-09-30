@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number Generator</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+      }
+
+      #myButton {
+        font-size: 3em;
+        padding: 5px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .myLabels {
+        font-size: 3em;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myButton">roll</button>
+    <label id="label1" class="myLabels"></label>
+    <label id="label2" class="myLabels"></label>
+    <label id="label3" class="myLabels"></label>
+    <script>
+      const myButton = document.getElementById("myButton");
+      const label1 = document.getElementById("label1");
+      const label2 = document.getElementById("label2");
+      const label3 = document.getElementById("label3");
+      const min = 1;
+      const max = 100;
+
+      let randomNumber1;
+      let randomNumber2;
+      let randomNumber3;
+
+      myButton.onclick = () => {
+        randomNumber1 = Math.floor(Math.random() * max) + min;
+        randomNumber2 = Math.floor(Math.random() * max) + min;
+        randomNumber3 = Math.floor(Math.random() * max) + min;
+
+        label1.textContent = randomNumber1;
+        label2.textContent = randomNumber2;
+        label3.textContent = randomNumber3;
+      };
+    </script>
+  </body>
+</html>
+
+<!-- Ini adalah syntax dasar untuk melakukan random number -->
+<!-- const min = 50;
+const max = 100;
+
+let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(randomNumber); -->
+
+<!-- Ini adalah syntax pertama untuk melakukan random generator dengan button -->
+
+<!-- <button id="myButton">roll</button><br />
+<label id="myLabel"></label>
+<script>
+  const myButton = document.getElementById("myButton");
+  const myLabel = document.getElementById("myLabel");
+  const min = 1;
+  const max = 1000;
+
+  myButton.addEventListener("click", () => {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    myLabel.innerHTML = randomNumber;
+  });
+</script> -->

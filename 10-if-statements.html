@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If Statement</title>
+    <style>
+      #container {
+        text-align: center;
+        background-color: rgb(244, 244, 244);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+        width: 70vw;
+        margin: 10vh auto;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      #container2 {
+        background-color: antiquewhite;
+        display: flex;
+        align-items: center;
+        margin: 3px auto;
+        margin-bottom: 4px;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+      }
+
+      #myText {
+        padding: 15px;
+        margin: 5px;
+        width: 50%;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        border: 1px solid rgb(90, 90, 90);
+      }
+
+      #myText:focus {
+        border: 2px solid rgb(4, 155, 42);
+        transition: 0.25s ease-in;
+        outline: none;
+      }
+
+      #mySubmit {
+        margin-top: 10px;
+        padding: 13px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: rgb(4, 155, 42);
+        color: whitesmoke;
+        cursor: pointer;
+      }
+
+      #mySubmit:hover {
+        background-color: rgb(2, 97, 2);
+        transition: 0.25s ease-in;
+      }
+
+      #myInfo {
+        width: 70%;
+        font-size: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input type="text" id="myText" placeholder="Enter your age" /><br />
+      <div id="container2">
+        <input type="checkbox" name="haveLicense" id="haveLicense" /><label
+          for="haveLicense"
+          >Have a Lisense</label
+        >
+      </div>
+
+      <button id="mySubmit">Submit</button>
+      <p id="myInfo"></p>
+    </div>
+    <script>
+      //Latihan validasi dengan if dengan DOM & button
+
+      const myText = document.getElementById("myText");
+      const mySubmit = document.getElementById("mySubmit");
+      const myInfo = document.getElementById("myInfo");
+
+      let yourAge;
+      let yourHasLicense;
+
+      mySubmit.onclick = function () {
+        yourAge = myText.value;
+        yourHasLicense = document.getElementById("haveLicense").checked;
+
+        if (yourAge >= 18 && yourHasLicense) {
+          myInfo.textContent = "You are old enough to drive 😎 ";
+        } else if (yourAge >= 18 && !yourHasLicense) {
+          myInfo.textContent = "You must be have license 😂 ";
+        } else {
+          myInfo.textContent = "You are not old enough to drive 😤 ";
+        }
+      };
+
+      // // IF STATEMENT = if a condition is true, execute some code
+      // //                if not, do something else
+
+      // //example 1
+      // let age = 19;
+
+      // if (age >= 18) {
+      //   console.log("you can access this content");
+      // } else {
+      //   console.log("you cannot access this content");
+      // }
+
+      // //example 2
+      // let time = 9;
+
+      // if (time < 12) {
+      //   console.log("Good morning");
+      // } else {
+      //   console.log("Good afternoon");
+      // }
+
+      // //example 3 with boolean
+      // let isStudent = true;
+
+      // if (isStudent) {
+      //   console.log("you are a student");
+      // } else {
+      //   console.log("you are NOT a student");
+      // }
+
+      // //example 4
+      // let age2 = 19;
+      // let hasLicense = false;
+
+      // if (age2 >= 18 && hasLicense) {
+      //   console.log("you are old enough to drive");
+      // } else if (age2 >= 18 && !hasLicense) {
+      //   console.log("you must be have license");
+      // } else {
+      //   console.log("you are not old enough to drive");
+      // }
+    </script>
+  </body>
+</html>
